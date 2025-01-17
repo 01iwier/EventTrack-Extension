@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Track</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 400px; /* Set the width you want */
+      height: 350px; /* Set the height you want */
+    }
+    
+    #tabs {
+      display: flex;
+      background-color: #333;
+    }
+    
+    #tabs button {
+      flex: 1;
+      padding: 10px;
+      background: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    
+    #tabs button.active {
+      background: #007BFF;
+    }
+    
+    #content {
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+    }
+    
+    #ufc-events {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .event-box {
+      background-color: #f1f1f1; /* Light gray background */
+      padding: 15px;
+      border-radius: 8px; /* Rounded corners */
+      border: 1px solid #ccc; /* Border around the box */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-box h3 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .event-box p {
+      margin: 0;
+      font-size: 1em;
+      color: #666;
+    }
+
+    .event-box .date {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .event-box .location {
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    .event-box .arena {
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="tabs">
+    <button id="ufc-tab" class="active">UFC</button>
+    <button id="other-tab">Other</button>
+  </div>
+  <div id="content">
+    <div id="ufc-content">
+      <!-- <h3>Upcoming UFC Events</h3> -->
+      <ul id="ufc-events"></ul>
+    </div>
+    <div id="other-content" class="hidden">
+      <h3>Other</h3>
+      <p>No content yet.</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
